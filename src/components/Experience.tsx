@@ -1,0 +1,101 @@
+import { Card } from "@/components/ui/card";
+import { Briefcase, Calendar, Send } from "lucide-react";
+
+const Experience = () => {
+  return (
+    <section
+      id="experience"
+      className="-z-0 py-20 px-4 sm:px-6 lg:px-8 bg-section-bg/60 relative overflow-hidden"
+    >
+      {/* Background Wave Decorations - Multiple Stacked Waves */}
+      <div className="absolute inset-0 -z-10 opacity-15 pointer-events-none">
+        {[...Array(12)].map((_, i) => (
+          <svg
+            key={i}
+            className="absolute inset-0  w-full"
+            style={{ top: `${i * 8}%` }}
+            height="100"
+            viewBox="0 0 1000 100"
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path
+              d="M0 50 Q 125 20, 250 50 T 500 50 T 750 50 T 1000 50"
+              stroke="hsl(var(--primary))"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="5,5"
+            />
+          </svg>
+        ))}
+      </div>
+
+      {/* Paper Plane Icons */}
+      <Send className="absolute top-[10%] right-[10%] w-12 h-12 text-primary/20 animate-float rotate-90" />
+      <Send className="absolute top-[30%] right-[30%] w-12 h-12 text-primary/20 animate-float rotate-60" />
+      <Send className="absolute bottom-32 left-16 w-10 h-10 text-primary/20 animate-float -rotate-12" />
+
+      <div className="container mx-auto">
+        <div className="text-center mb-16 animate-slide-up">
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="w-12 h-1 bg-primary rounded-full"></div>
+            <span className="text-primary font-medium text-lg">
+              What do I do
+            </span>
+            <div className="w-12 h-1 bg-primary rounded-full"></div>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Work Experience
+          </h2>
+          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            A small brief of my professional journey and work experience.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <Card
+            className="p-8 border-2 border-border bg-card rounded-3xl
+              hover:border-primary transition-all duration-500 hover:scale-[1.04]
+              hover:shadow-2xl animate-fade-in"
+            style={{ animationDelay: `0.15s` }}
+          >
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <Briefcase className="w-8 h-8 text-primary" />
+              </div>
+
+              <div className="flex-1">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">SDET</h3>
+                    <p className="text-xl text-foreground/80">
+                      Cognizant Technology Solutions, Bengaluru.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted-foreground mt-2 sm:mt-0">
+                    <Calendar className="w-5 h-5" />
+                    <span>Oct 2024 – Present</span>
+                  </div>
+                </div>
+                <p className="text-foreground/80 leading-relaxed">
+                  Created and executed scalable UI and API automation
+                  frameworks, implementing data-driven, behavioral-driven and page object models to
+                  validate complex workflows. My responsibilities included
+                  continuous regression testing, integrating suites into CI/CD
+                  pipelines, and conducting performance and load testing. I also
+                  leveraged GenAI tools like <b>Github Copilot</b> to accelerate development and debugging.
+                  Key technologies: <b>Java, JavaScript, Selenium, Playwright,
+                  Cucumber, REST Assured, Postman, JMeter, Jenkins, Azure
+                  DevOps, Git/GitHub </b>
+                </p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
