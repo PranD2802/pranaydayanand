@@ -59,7 +59,7 @@ const Contact = () => {
       icon: Globe,
       label: "Website",
       value: "pranaydayanand.in",
-      link: "https://pranaydayanand.in",
+      link: "https://pranaydayanand.com",
     },
     {
       icon: MapPin,
