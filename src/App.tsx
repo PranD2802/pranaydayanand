@@ -33,7 +33,7 @@ const App = () => {
         {loading ? (
           <PageLoader />
         ) : (
-          <BrowserRouter>
+          <BrowserRouter basename="/pranaydayanand">
           <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
