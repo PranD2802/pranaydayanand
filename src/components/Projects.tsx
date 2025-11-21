@@ -51,9 +51,10 @@ const Projects = () => {
       id="projects"
       className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
     >
-      {/* Background Wave Decorations */}
+    <Send className="absolute top-[10%] right-[20%] w-12 h-12 text-primary/20 rotate-50 animate-pulse" />
+
       <div className="absolute inset-0 opacity-5 pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <svg
             key={i}
             className="absolute w-full"
@@ -74,14 +75,7 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Floating Icons */}
-      <Send className="absolute top-[10%] right-[10%] w-12 h-12 text-primary/20 animate-float rotate-90" />
-      <Send className="absolute top-[20%] right-[35%] w-12 h-12 text-primary/20 animate-float rotate-60" />
-      <Send className="absolute top-[50%] right-[60%] w-12 h-12 text-primary/20 animate-float rotate-45" />
-      <Send className="absolute bottom-32 left-16 w-10 h-10 text-primary/20 animate-float -rotate-12" />
-
       <div className="container mx-auto">
-        {/* Header */}
         <div className="text-center mb-16 animate-slide-up">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-12 h-1 bg-primary rounded-full"></div>
@@ -100,17 +94,15 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Projects */}
         <div className="space-y-12 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
               className={`flex flex-col ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-              } gap-8 items-center animate-fade-in group`}
+              } gap-6 items-center animate-fade-in`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Project Image */}
               <div className="lg:w-1/2 relative">
                 <div className="relative overflow-hidden rounded-lg">
                   <div className="absolute top-4 left-4 w-8 h-8 border-t-4 border-l-4 border-primary z-10"></div>
@@ -120,13 +112,13 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:border-primary transition-all duration-500 hover:scale-[1.04]
+              hover:shadow-2xl animate-fade-in"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Project Info */}
               <div className="lg:w-1/2 relative">
                 <Card className="p-8 border-2 border-border bg-card/80 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-xl">
                   <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
@@ -138,11 +130,9 @@ const Projects = () => {
                   <h3 className="text-2xl font-bold mb-4 mt-2">
                     {project.title}
                   </h3>
-
                   <p className="text-foreground/80 mb-6 leading-relaxed">
                     {project.description}
                   </p>
-
                   <Button
                     variant="outline"
                     className="rounded-full group/btn border-2"
