@@ -1,3 +1,5 @@
+/* ——————— CONTACT FIXED FULL VERSION ——————— */
+
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,8 +32,8 @@ const WhatsAppIcon = () => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M38.9,8.1A20.9,20.9,0,0,0,3.2,22.8,19.8,19.8,0,0,0,6,33.2L3,44l11.1-2.9a20.3,20.3,0,0,0,10,2.5A20.8,20.8,0,0,0,38.9,8.1Z" />
-    <path d="M33.6,27.2A29.2,29.2,0,0,0,30,25.5c-.4-.2-.8-.3-1.1.2s-1.4,1.7-1.7,2.1a.8.8,0,0,1-1.1.1,15.2,15.2,0,0,1-4.2-2.6A15,15,0,0,1,19,21.7a.7.7,0,0,1,.2-1l.8-1a3.5,3.5,0,0,0,.5-.8.9.9,0,0,0,0-.9c-.2-.3-1.2-2.8-1.6-3.9s-.9-.9-1.2-.9h-1a1.7,1.7,0,0,0-1.4.7,5.5,5.5,0,0,0-1.8,4.3,10.4,10.4,0,0,0,2.1,5.4c.3.3,3.7,5.6,8.9,7.8a16.4,16.4,0,0,0,3,1.1,6.4,6.4,0,0,0,3.3.2c1-.1,3.1-1.2,3.5-2.4s.5-2.3.3-2.5A2.1,2.1,0,0,0,33.6,27.2Z" />
+    <path d="M38.9,8.1A20.9,20.9,0,0,0,3.2,22.8A19.8,19.8,0,0,0,6,33.2L3,44l11.1-2.9a20.3,20.3,0,0,0,10,2.5A20.8,20.8,0,0,0,38.9,8.1Z" />
+    <path d="M33.6,27.2A29.2,29.2,0,0,0,30,25.5c-.4-.2-.8-.3-1.1.2s-1.4,1.7-1.7,2.1a.8.8,0,0,1-1.1.1A15.2,15.2,0,0,1,22,25.3A15,15,0,0,1,19,21.7a.7.7,0,0,1,.2-1l.8-1a3.5,3.5,0,0,0,.5-.8a.9.9,0,0,0,0-.9c-.2-.3-1.2-2.8-1.6-3.9s-.9-.9-1.2-.9h-1a1.7,1.7,0,0,0-1.4.7A5.5,5.5,0,0,0,14.5,18a10.4,10.4,0,0,0,2.1,5.4A32.54,32.54,0,0,0,25.5,31a16.4,16.4,0,0,0,3,1.1a6.4,6.4,0,0,0,3.3.2c1-.1,3.1-1.2,3.5-2.4s.5-2.3.3-2.5A2.1,2.1,0,0,0,33.6,27.2Z" />
   </svg>
 );
 
@@ -72,58 +74,11 @@ const Contact = () => {
   ];
 
   const socialMedia = [
-    { icon: Github, name: "GitHub", link: "https://github.com/PranD2802" },
-    {
-      icon: Linkedin,
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/pranayd",
-    },
-    { icon: WhatsAppIcon, name: "WhatsApp", link: "https://wa.me/7349428331" },
-    {
-      icon: Instagram,
-      name: "Instagram",
-      link: "https://www.instagram.com/ig_pranayd/",
-    },
+    { icon: Github, link: "https://github.com/PranD2802" },
+    { icon: Linkedin, link: "https://www.linkedin.com/in/pranayd" },
+    { icon: WhatsAppIcon, link: "https://wa.me/7349428331" },
+    { icon: Instagram, link: "https://www.instagram.com/ig_pranayd/" },
   ];
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing fields",
-        description: "Please fill in all fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSending(true);
-
-    try {
-      const res = await fetch("https://formspree.io/f/xdornpob", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (!res.ok) throw new Error("Form submission failed");
-
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out!",
-      });
-
-      setFormData({ name: "", email: "", message: "" });
-    } catch {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Try again.",
-        variant: "destructive",
-      });
-    }
-
-    setIsSending(false);
-  };
 
   return (
     <section
@@ -152,11 +107,11 @@ const Contact = () => {
       </div>
 
       <div className="container mx-auto max-w-7xl">
-        {/* Heading */}
+        {/* Header */}
         <div className="text-center mb-12 animate-slide-up">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-12 h-1 bg-primary rounded-full"></div>
-            <span className="text-primary font-medium text-lg">Who I am</span>
+            <span className="text-primary font-medium text-lg">Who I Am</span>
             <div className="w-12 h-1 bg-primary rounded-full"></div>
           </div>
 
@@ -170,13 +125,13 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* GRID */}
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* ---- LEFT ---- */}
+        {/* GRID FIXED */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* LEFT */}
           <div className="space-y-7 mt-0">
             {/* Profile */}
             <div className="flex justify-center">
-              <div className="relative w-[330px] h-[330px]">
+              <div className="relative w-[280px] h-[280px] sm:w-[330px] sm:h-[330px]">
                 <svg
                   className="absolute inset-0 w-full h-full animate-spin-slow"
                   viewBox="0 0 220 220"
@@ -199,7 +154,7 @@ const Contact = () => {
                 </svg>
 
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-60 h-60 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                  <div className="w-52 h-52 sm:w-60 sm:h-60 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                     <img
                       src={profile}
                       alt="Profile"
@@ -211,7 +166,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-4 ml-10">
+            <div className="space-y-4 ml-4 sm:ml-10">
               {contactDetails.map((c, i) => (
                 <a
                   key={i}
@@ -230,11 +185,9 @@ const Contact = () => {
             </div>
 
             {/* Socials */}
-            <div className="pt-1 pl-10">
-              <h3 className="text-lg font-semibold mb-6 text-left ml-10">
-                Connect With Me
-              </h3>
-              <div className="flex justify-start ml-10 gap-4">
+            <div className="pt-1 ml-4 sm:ml-10">
+              <h3 className="text-lg font-semibold mb-6">Connect With Me</h3>
+              <div className="flex gap-4">
                 {socialMedia.map((s, i) => (
                   <a
                     key={i}
@@ -249,28 +202,27 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* ---- RIGHT ---- */}
-          <div className="space-y-12 mt-8 max-w-xl ml-auto w-full">
+          {/* RIGHT COLUMN */}
+          <div className="space-y-12 mt-9 mx-auto w-full max-w-lg">
             {/* BIO CARD */}
-            <div className="relative max-w-xl ml-auto mt-3 w-full">
-              {/* PEEKING MINION */}
+            <div className="relative w-full max-w-lg mx-auto">
+              {/* ADAPTIVE MINION */}
               <img
                 src={Peeking}
                 alt="Minion"
                 className="
-      absolute -right-[4%]        /* moved slightly right */
-      -mt-4
-      transform -translate-x-1/2
-      -top-24 sm:-top-20 md:-top-24 lg:-top-28
-      z-20
-      w-[70px] sm:w-[90px] md:w-[110px] lg:w-[130px]
-      object-contain pointer-events-none select-none
-    "
+                  absolute 
+                  -top-30 sm:-top-20 md:-top-24 lg:-top-28
+                  -right-6 sm:-right-4 md:-right-6
+                  w-20 sm:w-24 md:w-28 lg:w-32
+                  responsive-img floating-safe shrink-sm
+                  z-20 pointer-events-none select-none
+                "
               />
 
-              {/* TOP-LEFT DECORATIVE CORNER */}
+              {/* TOP LEFT SVG */}
               <svg
-                className="absolute -top-3 -left-3 w-6 h-6 text-primary transition-transform duration-300 hover:scale-110"
+                className="absolute -top-3 -left-3 w-6 h-6 text-primary hover:scale-110 transition-transform"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -278,9 +230,9 @@ const Contact = () => {
                 <rect width="4" height="24" />
               </svg>
 
-              {/* BOTTOM-RIGHT DECORATIVE CORNER */}
+              {/* BOTTOM RIGHT SVG */}
               <svg
-                className="absolute -bottom-3 -right-3 w-6 h-6 text-primary transition-transform duration-300 hover:scale-110"
+                className="absolute -bottom-3 -right-3 w-6 h-6 text-primary hover:scale-110 transition-transform"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -288,9 +240,7 @@ const Contact = () => {
                 <rect x="20" width="4" height="24" />
               </svg>
 
-              {/* MAIN BIO BOX */}
-              <div
-                className="p-10 border-2 border-border bg-card/80 backdrop-blur-sm rounded-xl hover:border-primary/60 transition-all">
+              <div className="p-10 border-2 border-border bg-card/80 backdrop-blur-sm rounded-xl hover:border-primary/60 transition-all">
                 <h3 className="text-xl font-bold mb-3 text-primary">
                   Beyond the Code
                 </h3>
@@ -309,12 +259,12 @@ const Contact = () => {
             </div>
 
             {/* FORM */}
-            <Card className="p-10 border-2 border-border bg-card/70 backdrop-blur-sm w-full">
+            <Card className="p-10 border-2 border-border bg-card/70 backdrop-blur-sm w-full max-w-lg mx-auto">
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Send Message
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form className="space-y-6">
                 <div>
                   <Label>Name</Label>
                   <Input
@@ -350,21 +300,8 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button
-                  type="submit"
-                  className="w-full rounded-full"
-                  disabled={isSending}
-                >
-                  {isSending ? (
-                    <div className="flex items-center gap-2">
-                      <Send className="w-4 h-4 animate-bounce" />
-                      Sending...
-                    </div>
-                  ) : (
-                    <>
-                      Send Message <Send className="w-4 h-4 ml-2" />
-                    </>
-                  )}
+                <Button type="submit" className="w-full rounded-full">
+                  Send Message <Send className="w-4 h-4 ml-2" />
                 </Button>
               </form>
             </Card>
