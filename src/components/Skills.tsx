@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Send } from "lucide-react";
+import Hanging from "@/assets/Hanging.png"
 
 const Skills = () => {
   const skillCategories = [
@@ -137,10 +138,28 @@ const Skills = () => {
       className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-16 overflow-hidden bg-background"
     >
       {/* ===== BACKGROUND DESIGN ===== */}
-      <Send className="absolute top-20 right-10 w-12 h-12 text-primary/20 rotate-45 animate-float" />
       <Send className="absolute top-[20%] right-[25%] w-12 h-12 text-primary/20 rotate-60 animate-float" />
       <Send className="absolute top-[62%] right-[60%] w-12 h-12 text-primary/20 rotate-50 animate-float" />
       <Send className="absolute bottom-32 left-16 w-12 h-12 text-primary/20 rotate-45 animate-float" />
+      <img
+          src={Hanging}
+          alt="Minion"
+          className="
+    absolute
+    top-14 right-8
+    w-[130px]   /* ≈6cm */
+    h-auto
+    object-contain
+    pointer-events-none
+    select-none
+    md:w-[110px]
+    sm:w-[60px]
+    xs:w-[30px]
+  "
+          style={{
+            transform: "translate(-10px, 10px)",
+          }}
+        />
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Left Blob */}
@@ -148,21 +167,6 @@ const Skills = () => {
 
         {/* Right Blob */}
         <div className="absolute right-[1%] bottom-[1%] w-[300px] h-[300px] bg-primary/10 rounded-full"></div>
-
-        {/* Left Dotted Wave */}
-        {/* <svg
-          className="absolute left-[5%] top-[25%] w-[350px] h-[350px] opacity-[1]"
-          viewBox="0 0 300 300"
-          fill="none"
-        >
-          <path
-            d="M20 150 Q80 50, 150 150 T280 150"
-            stroke="hsl(var(--primary))"
-            strokeWidth="3"
-            fill="none"
-            strokeDasharray="6,6"
-          />
-        </svg> */}
 
         {/* Right Rings */}
         <svg

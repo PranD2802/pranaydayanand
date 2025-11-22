@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Briefcase, Calendar, Send } from "lucide-react";
+import Selfie from "@/assets/Selfie.png";
 
 const Experience = () => {
   return (
@@ -7,23 +8,21 @@ const Experience = () => {
       id="experience"
       className="-z-0 py-20 px-4 sm:px-6 lg:px-8 bg-section-bg/60 relative overflow-hidden"
     >
-      {/* Background Wave Decorations - Multiple Stacked Waves */}
-      <div className="absolute inset-0 -z-10 opacity-15 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+      {/* Background Waves */}
+      <div className="absolute inset-0 opacity-15 pointer-events-none">
+        {[...Array(15)].map((_, i) => (
           <svg
             key={i}
-            className="absolute inset-0  w-full"
-            style={{ top: `${i * 8}%` }}
+            className="absolute w-full"
+            style={{ top: `${i * 7}%` }}
             height="100"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
+            viewBox="0 0 2000 100"
             fill="none"
           >
             <path
-              d="M0 50 Q 125 20, 250 50 T 500 50 T 750 50 T 1000 50"
+              d="M0 50 Q 250 20, 500 50 T 1000 50 T 1500 50 T 2000 50"
               stroke="hsl(var(--primary))"
               strokeWidth="2"
-              fill="none"
               strokeDasharray="5,5"
             />
           </svg>
@@ -33,7 +32,7 @@ const Experience = () => {
       {/* Paper Plane Icons */}
       <Send className="absolute top-[10%] right-[10%] w-12 h-12 text-primary/20 animate-float rotate-90" />
       <Send className="absolute top-[30%] right-[30%] w-12 h-12 text-primary/20 animate-float rotate-60" />
-      <Send className="absolute bottom-32 left-16 w-10 h-10 text-primary/20 animate-float -rotate-12" />
+      <Send className="absolute bottom-[32%] left-16 w-10 h-10 text-primary/20 animate-float -rotate-12" />
 
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-slide-up">
@@ -53,11 +52,11 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative">
           <Card
             className="p-8 border-2 border-border bg-card rounded-3xl
-              hover:border-primary transition-all duration-500 hover:scale-[1.04]
-              hover:shadow-2xl animate-fade-in"
+        hover:border-primary transition-all duration-500 hover:scale-[1.04]
+        hover:shadow-2xl animate-fade-in"
             style={{ animationDelay: `0.15s` }}
           >
             <div className="flex flex-col md:flex-row gap-6">
@@ -80,19 +79,42 @@ const Experience = () => {
                 </div>
                 <p className="text-foreground/80 leading-relaxed">
                   Created and executed scalable UI and API automation
-                  frameworks, implementing data-driven, behavioral-driven and page object models to
-                  validate complex workflows. My responsibilities included
-                  continuous regression testing, integrating suites into CI/CD
-                  pipelines, and conducting performance and load testing. I also
-                  leveraged GenAI tools like <b>Github Copilot</b> to accelerate development and debugging.
-                  Key technologies: <b>Java, JavaScript, Selenium, Playwright,
-                  Cucumber, REST Assured, Postman, JMeter, Jenkins, Azure
-                  DevOps, Git/GitHub </b>
+                  frameworks, implementing data-driven, behavioral-driven and
+                  page object models to validate complex workflows. My
+                  responsibilities included continuous regression testing,
+                  integrating suites into CI/CD pipelines, and conducting
+                  performance and load testing. I also leveraged GenAI tools
+                  like <b>Github Copilot</b> to accelerate development and
+                  debugging. Key technologies:{" "}
+                  <b>
+                    Java, JavaScript, Selenium, Playwright, Cucumber, REST
+                    Assured, Postman, JMeter, Jenkins, Azure DevOps, Git/GitHub{" "}
+                  </b>
                 </p>
               </div>
             </div>
           </Card>
         </div>
+        {/* Floating Minion Bottom-Right */}
+        <img
+          src={Selfie}
+          alt="Minion"
+          className="
+    absolute
+    bottom-2 left-10
+    w-[230px]   /* ≈6cm */
+    h-auto
+    object-contain
+    pointer-events-none
+    select-none
+    md:w-[200px]
+    sm:w-[150px]
+    xs:w-[120px]
+  "
+          style={{
+            transform: "translate(-10px, 10px)",
+          }}
+        />
       </div>
     </section>
   );

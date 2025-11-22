@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import Photo from "@/assets/Photo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +18,9 @@ const Footer = () => {
     <div className="flex items-center gap-3 order-2 sm:order-1 w-full sm:w-auto">
       <div className="relative">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg">
-          <span className="text-white font-bold text-xl">PD</span>
+          <span className="text-white font-bold text-xl w-12 h-12">
+            <img src={Photo} alt="profile" className="w-12 h-12"/>
+          </span>
         </div>
         <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-500 border-2 border-background"></div>
       </div>

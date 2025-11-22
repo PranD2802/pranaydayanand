@@ -53,22 +53,21 @@ const Projects = () => {
     >
     <Send className="absolute top-[10%] right-[20%] w-12 h-12 text-primary/20 rotate-50 animate-pulse" />
 
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+      {/* Background Waves */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        {[...Array(15)].map((_, i) => (
           <svg
             key={i}
             className="absolute w-full"
             style={{ top: `${i * 7}%` }}
             height="100"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
+            viewBox="0 0 2000 100"
             fill="none"
           >
             <path
-              d="M0 50 Q 125 20, 250 50 T 500 50 T 750 50 T 1000 50"
+              d="M0 50 Q 250 20, 500 50 T 1000 50 T 1500 50 T 2000 50"
               stroke="hsl(var(--primary))"
               strokeWidth="2"
-              fill="none"
               strokeDasharray="5,5"
             />
           </svg>

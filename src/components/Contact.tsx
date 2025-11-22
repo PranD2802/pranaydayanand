@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import profile from "@/assets/Contact.jpg";
+import Peeking from "@/assets/Peeking.png";
 import {
   Mail,
   Phone,
@@ -17,6 +18,7 @@ import {
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
+// WhatsApp Icon
 const WhatsAppIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -84,12 +86,8 @@ const Contact = () => {
     },
   ];
 
-  /* -----------------------------------------------------
-      🔥 NEW FORMSPREE SUBMISSION HANDLER
-  ------------------------------------------------------ */
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Missing fields",
@@ -116,10 +114,10 @@ const Contact = () => {
       });
 
       setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch {
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again later.",
+        description: "Something went wrong. Try again.",
         variant: "destructive",
       });
     }
@@ -132,8 +130,8 @@ const Contact = () => {
       id="contact"
       className="py-20 px-4 sm:px-6 lg:px-8 bg-section-bg relative overflow-hidden"
     >
-      {/* BG Waves */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
+      {/* Background Waves */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <svg
             key={i}
@@ -155,7 +153,7 @@ const Contact = () => {
 
       <div className="container mx-auto max-w-7xl">
         {/* Heading */}
-        <div className="text-center mb-16 animate-slide-up">
+        <div className="text-center mb-12 animate-slide-up">
           <div className="inline-flex items-center gap-3 mb-4">
             <div className="w-12 h-1 bg-primary rounded-full"></div>
             <span className="text-primary font-medium text-lg">Who I am</span>
@@ -172,13 +170,13 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* ==== Main Layout ==== */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start -mt-[2%]">
-          {/* === LEFT COLUMN === */}
-          <div className="space-y-10">
-            {/* Profile Circle */}
+        {/* GRID */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          {/* ---- LEFT ---- */}
+          <div className="space-y-7 mt-0">
+            {/* Profile */}
             <div className="flex justify-center">
-              <div className="relative w-80 h-80">
+              <div className="relative w-[330px] h-[330px]">
                 <svg
                   className="absolute inset-0 w-full h-full animate-spin-slow"
                   viewBox="0 0 220 220"
@@ -189,10 +187,9 @@ const Contact = () => {
                       d="M 110,110 m -85,0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0"
                     />
                   </defs>
-
                   <text
                     className="fill-primary font-semibold tracking-widest"
-                    style={{ fontSize: "9.8px" }}
+                    style={{ fontSize: "9.6px" }}
                   >
                     <textPath href="#circlePath">
                       CONNECT • COLLABORATE • CREATE • COMMUNICATE • COLLABORATE
@@ -202,7 +199,7 @@ const Contact = () => {
                 </svg>
 
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-56 h-56 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+                  <div className="w-60 h-60 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
                     <img
                       src={profile}
                       alt="Profile"
@@ -214,7 +211,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Details */}
-            <div className="space-y-4 ml-20">
+            <div className="space-y-4 ml-10">
               {contactDetails.map((c, i) => (
                 <a
                   key={i}
@@ -233,11 +230,11 @@ const Contact = () => {
             </div>
 
             {/* Socials */}
-            <div className="pt-2">
-              <h3 className="text-lg font-semibold mb-8 text-center">
+            <div className="pt-1 pl-10">
+              <h3 className="text-lg font-semibold mb-6 text-left ml-10">
                 Connect With Me
               </h3>
-              <div className="flex justify-center gap-4 mb-2">
+              <div className="flex justify-start ml-10 gap-4">
                 {socialMedia.map((s, i) => (
                   <a
                     key={i}
@@ -252,20 +249,38 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* === RIGHT COLUMN === */}
-          <div className="space-y-20 mt-[15%]">
-            {/* BIO */}
-            <div className="relative max-w-xl ml-auto -mt-10">
+          {/* ---- RIGHT ---- */}
+          <div className="space-y-12 mt-8 max-w-xl ml-auto w-full">
+            {/* BIO CARD */}
+            <div className="relative max-w-xl ml-auto mt-3 w-full">
+              {/* PEEKING MINION */}
+              <img
+                src={Peeking}
+                alt="Minion"
+                className="
+      absolute -right-[4%]        /* moved slightly right */
+      -mt-4
+      transform -translate-x-1/2
+      -top-24 sm:-top-20 md:-top-24 lg:-top-28
+      z-20
+      w-[70px] sm:w-[90px] md:w-[110px] lg:w-[130px]
+      object-contain pointer-events-none select-none
+    "
+              />
+
+              {/* TOP-LEFT DECORATIVE CORNER */}
               <svg
-                className="absolute -top-3 -left-3 w-6 h-6 text-primary"
+                className="absolute -top-3 -left-3 w-6 h-6 text-primary transition-transform duration-300 hover:scale-110"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
                 <rect width="24" height="4" />
                 <rect width="4" height="24" />
               </svg>
+
+              {/* BOTTOM-RIGHT DECORATIVE CORNER */}
               <svg
-                className="absolute -bottom-3 -right-3 w-6 h-6 text-primary"
+                className="absolute -bottom-3 -right-3 w-6 h-6 text-primary transition-transform duration-300 hover:scale-110"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -273,30 +288,34 @@ const Contact = () => {
                 <rect x="20" width="4" height="24" />
               </svg>
 
-              <div className="p-8 border-2 border-border bg-card/80 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-xl rounded-lg">
+              {/* MAIN BIO BOX */}
+              <div
+                className="p-10 border-2 border-border bg-card/80 backdrop-blur-sm rounded-xl hover:border-primary/60 transition-all">
                 <h3 className="text-xl font-bold mb-3 text-primary">
                   Beyond the Code
                 </h3>
+
                 <p className="text-sm text-foreground/80 leading-relaxed">
                   A guy from Udupi with a head full of dreams and a heart full
                   of energy, that’s me in one line. I’m competitive by nature,
                   fun to be around, and always curious about new experiences.
                   Outside work, I enjoy playing badminton, diving into books,
-                  creating videos, and exploring movies, series, and sports—
-                  especially Cricket, F1, and Football. Determination drives me:
-                  once I decide on a goal, I stay committed until I achieve it.
+                  creating videos, and exploring movies, series, and
+                  sports—especially Cricket, F1, and Football. Determination
+                  drives me: once I decide on a goal, I stay committed until I
+                  achieve it.
                 </p>
               </div>
             </div>
 
-            {/* FORM (with Formspree) */}
-            <Card className="p-8 border-2 border-border bg-card/50 backdrop-blur-sm max-w-xl ml-auto h-[80%]">
+            {/* FORM */}
+            <Card className="p-10 border-2 border-border bg-card/70 backdrop-blur-sm w-full">
               <h3 className="text-2xl font-bold mb-6 text-center">
                 Send Message
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
+                <div>
                   <Label>Name</Label>
                   <Input
                     placeholder="Your name"
@@ -307,7 +326,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div>
                   <Label>Email</Label>
                   <Input
                     type="email"
@@ -319,7 +338,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div>
                   <Label>Message</Label>
                   <Textarea
                     rows={6}
