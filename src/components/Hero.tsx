@@ -48,7 +48,7 @@ const Hero = () => {
                 Hire Me
               </Button>
 
-              <a href="/assets/Pranay_Dayanand_Resume.pdf" download="Pranay_Dayanand_Resume.pdf">
+              <a href="/Pranay_Dayanand_Resume.pdf" download="Pranay_Dayanand_Resume.pdf">
                 <Button size="lg" variant="outline" className="rounded-full px-6 py-3 text-lg border-2 border-foreground hover:bg-foreground hover:text-background">
                   Download Resume
                 </Button>

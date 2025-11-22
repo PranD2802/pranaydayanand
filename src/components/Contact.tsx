@@ -58,7 +58,7 @@ const Contact = () => {
     {
       icon: Globe,
       label: "Website",
-      value: "pranaydayanand.in",
+      value: "pranaydayanand.com",
       link: "https://pranaydayanand.com",
     },
     {
@@ -273,7 +273,7 @@ const Contact = () => {
                 <rect x="20" width="4" height="24" />
               </svg>
 
-              <div className="border-2 border-primary/30 bg-card/50 backdrop-blur-sm p-6 rounded-lg shadow-lg">
+              <div className="p-8 border-2 border-border bg-card/80 backdrop-blur-sm hover:border-primary/50 transition-all duration-300 hover:shadow-xl rounded-lg">
                 <h3 className="text-xl font-bold mb-3 text-primary">
                   Beyond the Code
                 </h3>
